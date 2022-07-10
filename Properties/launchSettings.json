@@ -1,8 +1,11 @@
 {
   "profiles": {
     "CoonBot": {
-      "commandName": "Project",
-      "commandLineArgs": "-f"
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "commandLineArgs": "NzM2MTc3MjI3NjExMzczNjM4.XxrAeA.ywiCra6AHOPPaUftXdBoQZYbHrQ"
     }
   }
 }

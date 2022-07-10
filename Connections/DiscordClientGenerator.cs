@@ -14,12 +14,12 @@
 
 
 		public DiscordClient CreateClient() {
-			//TODO: Token can not be set for some reason when using this constructor...
-			//DiscordConfiguration config = new(ClientConfiguration) {
-			//	Token = _apiToken
-			//};
-			//DiscordClient client = new(config);
-
+			//<TODO Token can not be set for some reason when using this constructor>
+				//DiscordConfiguration config = new(ClientConfiguration) {
+				//	Token = _apiToken
+				//};
+				//DiscordClient client = new(config);
+			//</TODO>
 			//<PLACEHOLDER>
 			ClientConfiguration.Token = _apiToken;
 			DiscordClient client = new(ClientConfiguration);
