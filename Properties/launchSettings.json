@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CoonBot": {
+      "commandName": "Project",
+      "commandLineArgs": "-f"
+    }
+  }
+}
