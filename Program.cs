@@ -1,6 +1,4 @@
-﻿
-
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace CoonBot {
 	public static class Program {
@@ -21,7 +19,7 @@ namespace CoonBot {
 			if(apiToken is null) {
 				return;
 			}
-
+			
 			_clientFactory = new DiscordClientFactory(apiToken);
 			Client = _clientFactory.CreateClient();
 			SetupClient();
@@ -52,22 +50,32 @@ namespace CoonBot {
 			Log.Success($"{SlashCommands.RegisteredCommands.Count} Slash Commands loaded.");
 		}
 		private static string? GetApiToken(string[] args) {
-			string? token = args.FirstOrDefault(x => x.Length is > 40 and < 80);
-			TokenReader keyReader = new(Options.ApiKeyFilepath);
+			string? token;
 
-			if(token is not null) {
-				keyReader.Set(token);
-				Log.Success("Discord API Token has been updated successfully.");
+			// See if an environment variable is present
+			token = Environment.GetEnvironmentVariable("bot_token");
+			if(!string.IsNullOrWhiteSpace(token) && token.Length > 30) {
+				Log.Success($"API Token starting with {token[..4]} found as an environment variable.");
+				// Don't serialize it - keep it fully hidden
 				return token;
 			}
 
+			TokenReader keyReader = new(Options.ApiKeyFilepath);
+			
 			// Look for previously saved API key
 			if(keyReader.TryRead(out token)) {
 				Log.Success("Discord API Token loaded.");
 				return token;
 			}
 
-			Log.Fail("No Discord API Token was found. Include it as a startup argument to set one.");
+			token = args.FirstOrDefault(x => x.Length is > 30);
+			if(!string.IsNullOrWhiteSpace(token)) {
+				keyReader.Set(token);
+				Log.Success($"Discord API Token (starting with {token[..4]}) has been updated successfully.");
+				return token;
+			}
+
+			Log.Fail("No Discord API Token was found. Set an environment variable \"bot_token\" or run the bot with the token as an argument.");
 			return null;
 		}
 

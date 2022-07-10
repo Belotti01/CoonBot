@@ -7,13 +7,14 @@
     <EnablePreviewFeatures>true</EnablePreviewFeatures>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>.</DockerfileContext>
+    <UserSecretsId>9f5cb062-4e37-4fda-93e5-f4ff25f617c4</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DSharpPlus" Version="4.3.0-nightly-01149" />
-    <PackageReference Include="DSharpPlus.CommandsNext" Version="4.3.0-nightly-01149" />
-    <PackageReference Include="DSharpPlus.Interactivity" Version="4.3.0-nightly-01149" />
-    <PackageReference Include="DSharpPlus.SlashCommands" Version="4.3.0-nightly-01149" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.1" />
+    <PackageReference Include="DSharpPlus" Version="4.3.0-nightly-01151" />
+    <PackageReference Include="DSharpPlus.CommandsNext" Version="4.3.0-nightly-01151" />
+    <PackageReference Include="DSharpPlus.Interactivity" Version="4.3.0-nightly-01151" />
+    <PackageReference Include="DSharpPlus.SlashCommands" Version="4.3.0-nightly-01151" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.16.1" />
     <PackageReference Include="NLCommon" Version="0.2.0" />
     <!-- <PackageReference Include="NLCommon" Version="0.2.0" /> -->
   </ItemGroup>
