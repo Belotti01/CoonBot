@@ -11,13 +11,11 @@
 				(max, min) = (min, max);
 			}
 
-			//Check for users' idiocy
 			if(min == max) {
 				await msg.Channel.SendMessageAsync($"... {min}");
 				return;
 			}
 
-			//Generate number
 			try {
 				rng = new Random().Next(min, max + 1);
 			} catch(Exception) {
@@ -25,7 +23,6 @@
 				return;
 			}
 
-			//Send message
 			await msg.Channel.SendMessageAsync($"You rolled {rng}.");
 		}
 

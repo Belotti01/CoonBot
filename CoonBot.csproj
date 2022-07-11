@@ -14,8 +14,14 @@
     <PackageReference Include="DSharpPlus.CommandsNext" Version="4.3.0-nightly-01151" />
     <PackageReference Include="DSharpPlus.Interactivity" Version="4.3.0-nightly-01151" />
     <PackageReference Include="DSharpPlus.SlashCommands" Version="4.3.0-nightly-01151" />
+    <PackageReference Include="Google.Apis.YouTube.v3" Version="1.57.0.2735" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.16.1" />
     <PackageReference Include="NLCommon" Version="0.2.0" />
     <!-- <PackageReference Include="NLCommon" Version="0.2.0" /> -->
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="config.env">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

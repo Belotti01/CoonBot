@@ -366,3 +366,4 @@ FodyWeavers.xsd
 /ConnectionKey.config
 /_Macros
 /Properties/launchSettings.json
+/config.env

@@ -53,29 +53,14 @@ namespace CoonBot {
 			string? token;
 
 			// See if an environment variable is present
-			token = Environment.GetEnvironmentVariable("bot_token");
-			if(!string.IsNullOrWhiteSpace(token) && token.Length > 30) {
-				Log.Success($"API Token starting with {token[..4]} found as an environment variable.");
-				// Don't serialize it - keep it fully hidden
-				return token;
-			}
+			token = Env.DiscordToken;
 
-			TokenReader keyReader = new(Options.ApiKeyFilepath);
-			
-			// Look for previously saved API key
-			if(keyReader.TryRead(out token)) {
-				Log.Success("Discord API Token loaded.");
-				return token;
-			}
-
-			token = args.FirstOrDefault(x => x.Length is > 30);
 			if(!string.IsNullOrWhiteSpace(token)) {
-				keyReader.Set(token);
-				Log.Success($"Discord API Token (starting with {token[..4]}) has been updated successfully.");
+				Log.Success($"Discord API Token (starting with {token[..4]}) loaded successfully.");
 				return token;
 			}
 
-			Log.Fail("No Discord API Token was found. Set an environment variable \"bot_token\" or run the bot with the token as an argument.");
+			Log.Fail($"No Discord API Token was found. Set it inside \"{Options.EnvVarsPath}\" and retry.");
 			return null;
 		}
 
