@@ -14,6 +14,7 @@ global using NLCommon.Text;
 global using CoonBot;
 global using CoonBot.CLI;
 global using CoonBot.Connections;
+global using CoonBot.Utils;
 
 global using DSharpPlus;
 global using DSharpPlus.CommandsNext;

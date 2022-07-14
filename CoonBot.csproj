@@ -20,6 +20,9 @@
     <!-- <PackageReference Include="NLCommon" Version="0.2.0" /> -->
   </ItemGroup>
   <ItemGroup>
+    <None Update="debug-config.env">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="config.env">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
