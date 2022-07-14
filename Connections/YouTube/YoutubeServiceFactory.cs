@@ -1,7 +1,7 @@
 ﻿using Google.Apis.Services;
 using Google.Apis.YouTube.v3;
 
-namespace CoonBot.Connections.YouTube {
+namespace CoonBot.Connections {
 	public class YoutubeServiceFactory {
 		private static readonly Lazy<YoutubeServiceFactory> _shared = new(() => new YoutubeServiceFactory("youtube-key"));
 		public static YoutubeServiceFactory Shared => _shared.Value;
