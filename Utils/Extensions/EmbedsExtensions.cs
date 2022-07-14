@@ -1,5 +1,5 @@
 ﻿namespace CoonBot.Utils {
-	public static class DiscordEmbedsExtensions {
+	public static class EmbedsExtensions {
 
 		public static DiscordEmbedBuilder SetDefaults(this DiscordEmbedBuilder builder) {
 			return builder.WithColor(Options.Colors.Default)
@@ -16,6 +16,14 @@
 			}
 			return builder;
 		}
-	
+
+		public static DiscordEmbedBuilder WithDescription(this DiscordEmbedBuilder builder, DiscordUser user, string description) {
+			if(string.IsNullOrWhiteSpace(description))
+				return builder;
+			
+			return builder
+				.WithDescription($"{user.Username}, {description}");
+		}
+
 	}
 }
