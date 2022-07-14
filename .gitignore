@@ -367,3 +367,4 @@ FodyWeavers.xsd
 /_Macros
 /Properties/launchSettings.json
 /config.env
+/debug-config.env
